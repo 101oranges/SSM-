@@ -1,0 +1,10 @@
+com\oranges\service\imlp\BookServiceImpl.class
+com\oranges\config\jdbcConfig.class
+com\oranges\config\mybatisConfig.class
+com\oranges\service\BookService.class
+com\oranges\config\springConfig.class
+com\oranges\controller\BookController.class
+com\oranges\dao\BookDao.class
+com\oranges\config\springMvcConfig.class
+com\oranges\config\servletConfig.class
+com\oranges\domain\Book.class

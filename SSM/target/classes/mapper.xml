@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oranges.dao.BookDao">
+    <resultMap id="BaseResultMap" type="Book">
+        <result column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <sql id="selectall">
+        select * from test_table
+    </sql>
+
+
+
+    <select id="nextOne" resultType="com.oranges.domain.Book">
+        select * from test_table
+        where create_time =
+              (select create_time form test_table where create_time &lt; ${create_time}
+        order by create_time asc limit 1
+            )
+    </select>
+
+
+    <select id="previousOne" resultType="com.oranges.domain.Book">
+        select * from test_table
+        where create_time =
+              (select create_time form test_table where create_time &gt; ${create_time}
+        order by create_time asc limit 1
+            )
+    </select>
+
+
+
+
+</mapper>
